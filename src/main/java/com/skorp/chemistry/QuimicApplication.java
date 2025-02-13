@@ -1,4 +1,4 @@
-package com.skorp.quimic;
+package com.skorp.chemistry;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

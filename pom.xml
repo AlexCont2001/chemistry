@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.skorp</groupId>
-	<artifactId>quimic</artifactId>
+	<artifactId>chemistry</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>quimic</name>
 	<description>Demo project for Spring Boot</description>
