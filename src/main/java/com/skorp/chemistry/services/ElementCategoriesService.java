@@ -25,7 +25,7 @@ public class ElementCategoriesService {
             ArrayList<ElementCategories> elements = (ArrayList<ElementCategories>) elementCategoriesRepository.findAll();
             return  ResponseEntity.status(HttpStatus.OK).body(elements);
         }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ArrayList<>());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 
@@ -38,6 +38,55 @@ public class ElementCategoriesService {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Optional.empty());
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Optional.empty());
+        }
+    }
+
+    public ResponseEntity<String> CreateElementCategory(ElementCategories elementCategory){
+        try{
+            if(elementCategory.getName().isEmpty() || elementCategory.getDescription().isEmpty()){
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid request format. Please check the data and try again.");
+            }
+            elementCategoriesRepository.save(elementCategory);
+            return  ResponseEntity.status(HttpStatus.CREATED).body("Created");
+
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
+
+    public ResponseEntity<ElementCategories> ModifyElementCategory(ElementCategories elementCategory, int id){
+        try{
+
+            Optional<ElementCategories> elementObj = elementCategoriesRepository.findById(id);
+            if(elementObj.isEmpty()){
+                return  ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+            if(elementCategory.getName().isEmpty() || elementCategory.getDescription().isEmpty()){
+                return  ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            }
+            ElementCategories elementDB = elementObj.get();
+            elementDB.setName(elementCategory.getName());
+            elementDB.setDescription(elementCategory.getDescription());
+
+            elementCategoriesRepository.save(elementDB);
+            return ResponseEntity.status(HttpStatus.OK).body(elementDB);
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
+
+    public ResponseEntity<String> DeleteElementCategory(int id){
+        try{
+
+            Optional<ElementCategories> elementObj = elementCategoriesRepository.findById(id);
+            if(elementObj.isEmpty()){
+                return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Register Not Found");
+            }
+            elementCategoriesRepository.deleteById(id);
+            return  ResponseEntity.status(HttpStatus.OK).body("Register Deleted Successfully");
+
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 }
