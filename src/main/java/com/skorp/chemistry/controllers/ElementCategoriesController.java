@@ -1,7 +1,7 @@
 package com.skorp.chemistry.controllers;
 
 import com.skorp.chemistry.models.ElementCategories;
-import com.skorp.chemistry.services.ElementCategoriesService;
+import com.skorp.chemistry.services.ElementCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +14,9 @@ import java.util.Optional;
 public class ElementCategoriesController {
 
     @Autowired
-    private final ElementCategoriesService elementCategoriesService;
+    private final ElementCategoryService elementCategoriesService;
 
-    public ElementCategoriesController(ElementCategoriesService elementCategoriesService){
+    public ElementCategoriesController(ElementCategoryService elementCategoriesService){
         this.elementCategoriesService = elementCategoriesService;
     }
 

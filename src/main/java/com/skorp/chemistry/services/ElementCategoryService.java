@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
-public class ElementCategoriesService {
+public class ElementCategoryService {
 
     @Autowired
     private final IElementCategoriesRepository elementCategoriesRepository;
 
-    public ElementCategoriesService(IElementCategoriesRepository elementCategoriesRepository){
+    public ElementCategoryService(IElementCategoriesRepository elementCategoriesRepository){
         this.elementCategoriesRepository = elementCategoriesRepository;
     }
 
