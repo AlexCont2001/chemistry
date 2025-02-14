@@ -14,22 +14,27 @@ public class Elements {
     private int Id;
 
     private String Name;
+
     private int AtomicNumber;
+
     private Double AtomicMass;
+
     private Double FusionPoint;
+
     private Double BoilingPoint;
+
+    @Column(nullable = true)
     private Double FreezingPoint;
+
     private String MeasuringUnit;
 
-    @ManyToOne
-    @JoinColumn(name = "category", nullable = false)
-    private ElementCategories Category;
+    private int Category;
 
-    public ElementCategories getCategory() {
+    public int getCategory() {
         return Category;
     }
 
-    public void setCategory(ElementCategories category) {
+    public void setCategory(int category) {
         Category = category;
     }
 
