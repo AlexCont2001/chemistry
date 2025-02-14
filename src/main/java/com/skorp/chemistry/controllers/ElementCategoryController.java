@@ -11,12 +11,12 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/element_categories")
-public class ElementCategoriesController {
+public class ElementCategoryController {
 
     @Autowired
     private final ElementCategoryService elementCategoriesService;
 
-    public ElementCategoriesController(ElementCategoryService elementCategoriesService){
+    public ElementCategoryController(ElementCategoryService elementCategoriesService){
         this.elementCategoriesService = elementCategoriesService;
     }
 

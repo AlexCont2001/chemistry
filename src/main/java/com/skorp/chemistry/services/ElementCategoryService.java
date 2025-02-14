@@ -1,7 +1,7 @@
 package com.skorp.chemistry.services;
 
 import com.skorp.chemistry.models.ElementCategories;
-import com.skorp.chemistry.repositories.IElementCategoriesRepository;
+import com.skorp.chemistry.repositories.IElementCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +14,9 @@ import java.util.Optional;
 public class ElementCategoryService {
 
     @Autowired
-    private final IElementCategoriesRepository elementCategoriesRepository;
+    private final IElementCategoryRepository elementCategoriesRepository;
 
-    public ElementCategoryService(IElementCategoriesRepository elementCategoriesRepository){
+    public ElementCategoryService(IElementCategoryRepository elementCategoriesRepository){
         this.elementCategoriesRepository = elementCategoriesRepository;
     }
 

@@ -1,8 +1,6 @@
 package com.skorp.chemistry.services;
 
-import com.skorp.chemistry.models.ElementCategories;
 import com.skorp.chemistry.models.Elements;
-import com.skorp.chemistry.repositories.IElementCategoriesRepository;
 import com.skorp.chemistry.repositories.IElementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
