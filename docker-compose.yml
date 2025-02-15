@@ -10,13 +10,14 @@ services:
     ports:
       - "3307:3306"  # Puerto estándar
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
       - mysql_data:/var/lib/mysql
     networks:
       - chemistry_network
 
   api:
-    build: .
+    build:
+      context: ./api
     container_name: chemistry_api
     restart: always
     depends_on:
