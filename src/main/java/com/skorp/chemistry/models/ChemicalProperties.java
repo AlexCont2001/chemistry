@@ -3,7 +3,7 @@ package com.skorp.chemistry.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "/chemical_properties")
+@Table(name = "chemical_properties")
 public class ChemicalProperties {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

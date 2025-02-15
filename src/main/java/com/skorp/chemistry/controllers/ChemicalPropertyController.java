@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/chemical_property")
+@RequestMapping("/chemical_properties")
 public class ChemicalPropertyController {
 
     @Autowired

@@ -3,7 +3,7 @@ package com.skorp.chemistry.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "/compositions")
+@Table(name = "compositions")
 public class Compositions {
 
     @Id
